@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cristina Cuesta Bret | Mechanical Engineer</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0d3b66;
+      --accent: #00a896;
+      --accent-light: #02c39a;
+      --dark: #1a1a2e;
+      --light: #f8f9fa;
+      --card-bg: #ffffff;
+      --text: #2d3436;
+      --text-muted: #636e72;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7rem 2rem 4rem;
+      background: linear-gradient(135deg, #f8f9fa, #e8f4f8);
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-secondary {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      background: white;
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--primary);
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      transition: transform 0.4s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .project-thumb img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    .project-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-description {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-link {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+        /* SKILLS TAGS FIX */
+    .skill-tags {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.6rem 1rem;
+      margin-top: 1rem;
+    }
+
+    .skill-tags span {
+      padding: 0.45rem 0.9rem;
+      background: #f1f7fb;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #0d3b66;
+      border: 1px solid rgba(13,59,102,0.1);
+    }
+
+    
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    footer p {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">CCB</a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-content">
+    <span class="hero-badge">🌱 Renewable Energy & Sustainable Engineering</span>
+    <span class="hero-badge">⚙️ Mechanical Engineering</span>
+    <h1 class="hero-title">Cristina Cuesta Bret</h1>
+    <p class="hero-subtitle">
+      Mechanical engineering student passionate about renewable energy,
+      sustainable systems, and automotive engineering.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="Cristina_CuestaBret_Resume.pdf" target="_blank" class="btn btn-secondary">Resume</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <span class="section-label">About</span>
+    <h2 class="section-title">About Me</h2>
+  </div>
+  <p style="max-width:800px;margin:0 auto;text-align:center;color:var(--text-muted)">
+    Mechanical engineering student with experience in CAD modeling, structural
+    design, and renewable energy systems. I’ve worked on real-world engineering
+    problems through internships, research, and multidisciplinary team projects, including
+    the design of components for a solar electric vehicle.
+  </p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-label">Portfolio</span>
+    <h2 class="section-title">Engineering Projects</h2>
+  </div>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-thumb">
+        <img src="torquearm.jpg" alt="Torque arm FEA">
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Torque-Arm Design & FEA</h3>
+        <p class="project-description">Structural analysis and optimization under bending loads.</p>
+        <a href="EML4507 Project 2.pdf" target="_blank" class="project-link">View PDF →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-thumb">
+        <img src="SteeringWheel.jpg" alt="Steering wheel design">
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Solar Gators Steering Wheel</h3>
+        <p class="project-description">Ergonomic and lightweight steering wheel design.</p>
+        <a href="Steering Wheel Project.pdf" target="_blank" class="project-link">View PDF →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-thumb">
+        <img src="canopyhinge.jpg" alt="Canopy hinge mechanism">
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Canopy Hinge Mechanism</h3>
+        <p class="project-description">Smooth deployment hinge for a solar vehicle canopy.</p>
+        <a href="Canopy Hinge.pdf" target="_blank" class="project-link">View PDF →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-thumb">
+        <img src="Controls.jpg" alt="Furuta pendulum control">
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Furuta Pendulum Control</h3>
+        <p class="project-description">State-space modeling and controller design.</p>
+        <a href="Controls.pdf" target="_blank" class="project-link">View PDF →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+  
+<!-- SKILLS -->
+<section id="skills" style="background:#f8fafc">
+  <div class="section-header">
+    <span class="section-label">Expertise</span>
+    <h2 class="section-title">Skills & Experience</h2>
+  </div>
+
+  <div class="project-card">
+    <div class="project-content">
+      <h3 class="project-title">Software</h3>
+      <div class="skill-tags">
+        <span>SolidWorks</span>
+        <span>MATLAB</span>
+        <span>Python</span>
+        <span>Abaqus</span>
+        <span>Microsoft Office</span>
+        <span>Fusion 360</span>
+        <span>Granta</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-content">
+      <h3 class="project-title">Technical</h3>
+      <div class="skill-tags">
+        <span>3D CAD</span>
+        <span>2D Drawings & Design</span>
+        <span>Manufacturing</span>
+        <span>Structural Analysis</span>
+        <span>FEA</span>
+        <span>Programming</span>
+        <span>Material Selection</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-content">
+      <h3 class="project-title">Certifications</h3>
+      <div class="skill-tags">
+        <span>SolidWorks</span>
+        <span>ACE CNC Machining Training</span>
+        <span>Cambridge Proficiency in English (C2)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-content">
+      <h3 class="project-title">Honors & Leadership</h3>
+      <div class="skill-tags">
+        <span>Herbert Werheim College of Engineering Dean’s List</span>
+        <span>UF Club Tennis President</span>
+        <span>Mechanical Design Capstone Deputy Lead</span>
+        <span>Honors Thesis</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-content">
+      <h3 class="project-title">Languages</h3>
+      <div class="skill-tags">
+        <span>English (Fluent)</span>
+        <span>Spanish (Native)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-content">
+      <h3 class="project-title">Clubs</h3>
+      <div class="skill-tags">
+        <span>Solar Gators</span>
+        <span>SHPE (Society of Hispanic Professional Engineers)</span>
+        <span>University of Florida Club Tennis</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- RESUME -->
+<section id="resume" style="background:#f8fafc">
+  <div class="section-header">
+    <span class="section-label">Resume</span>
+    <h2 class="section-title">My Resume</h2>
+  </div>
+
+  <div style="max-width:900px;margin:0 auto">
+    <iframe src="Cristina_CuestaBret_Resume.pdf" width="100%" height="900" style="border-radius:12px;border:1px solid #ddd"></iframe>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <span class="section-label">Contact</span>
+     <p class="footer-text">Interested in discussing sustainable engineering solutions or collaboration opportunities? I'd love to hear from you.</p>
+    <h2 class="section-title">Let’s Connect</h2>
+  </div>
+
+  <div class="hero-cta">
+    <a href="mailto:cristinacuestabret@gmail.com" class="btn btn-primary">Email Me</a>
+    <a href="https://www.linkedin.com/in/cristinacuestabret/" target="_blank" class="btn btn-secondary">LinkedIn</a>
+  </div>
+</section>
+
+ <footer>
+        <div class="footer-content">
+            <div class="footer-divider"></div>
+            <p class="footer-copy">©️ 2025 Cristina Cuesta Bret. Built with passion for engineering.</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>
