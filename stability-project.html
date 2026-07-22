@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Aircraft Stability Analysis | Laura Cuesta</title>
+<title>Aircraft Stability Analysis | Laura Cuesta Bret</title>
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
@@ -469,160 +469,183 @@ transform:translateY(-2px);
 
   <section>
 
+<section>
+
 <h2>Engineering Process</h2>
 
-<p style="margin-bottom:50px;">
-The following images summarize the engineering process from the initial aircraft design through the final flight simulation. Each phase built upon the previous one, creating a complete workflow from analytical calculations to computational validation and dynamic simulation.
+<p style="margin-bottom:60px;">
+The following images summarize the engineering workflow from the initial aircraft design through the final flight simulation. Each phase built upon the previous one, progressing from analytical calculations to computational validation and ultimately a fully simulated aircraft.
 </p>
 
-<div class="gallery-text">
-
-<h3>Aircraft Geometry</h3>
-
-</div>
-      
-<p>
-The project began by defining the aircraft geometry, including the wing, fuselage, horizontal tail, and vertical tail dimensions. These geometric properties served as the foundation for every aerodynamic calculation and simulation performed throughout the project.
-</p>
-
-</div>
-      
 <div class="gallery">
 
-<div class="gallery-item">
+    <!-- Aircraft Geometry -->
 
-<img src="geometry.jpg" alt="Aircraft Geometry">
+    <div class="gallery-item">
 
-</div>
+        <img src="geometry.jpg" alt="Aircraft Geometry">
 
-<div class="gallery-item reverse">
+        <div class="gallery-text">
 
-<img src="hand_calculations.jpg" alt="Hand Calculations">
+            <h3>Aircraft Geometry</h3>
 
-<div class="gallery-text">
+            <p>
+            The project began by defining the aircraft geometry, including the wing, fuselage, horizontal tail, and vertical tail dimensions. These geometric properties served as the foundation for every aerodynamic calculation, stability analysis, and simulation performed throughout the project.
+            </p>
 
-<h3>Analytical Hand Calculations</h3>
+        </div>
 
-<p>
-Longitudinal, lateral, and directional stability derivatives were calculated using classical aircraft stability and control theory presented throughout the course. These calculations established the theoretical aerodynamic behavior of the aircraft before any computational tools were introduced.
+    </div>
 
-These calculations are split into three deliverables.
-</p>
+    <!-- Hand Calculations -->
 
-<a href="Deliverable1.pdf" target="_blank" class="deliverable-button">
-📄 Deliverable I
-</a>
+    <div class="gallery-item reverse">
 
-<a href="Deliverable2.pdf" target="_blank" class="deliverable-button">
-📄 Deliverable II
-</a>
+        <img src="hand_calculations.jpg" alt="Hand Calculations">
 
-<a href="Deliverable3.pdf" target="_blank" class="deliverable-button">
-📄 Deliverable III
-</a>
+        <div class="gallery-text">
 
-</div>
-<div class="gallery-item">
+            <h3>Analytical Hand Calculations</h3>
 
-<img src="excel.jpg" alt="Excel Verification">
+            <p>
+            Longitudinal, lateral, and directional stability derivatives were calculated using classical aircraft stability and control theory presented throughout the course. These calculations established the theoretical aerodynamic behavior of the aircraft before any computational tools were introduced.
+            </p>
 
-<div class="gallery-text">
+            <p>
+            The complete analytical work was organized into three project deliverables. Each report documents the engineering methodology, calculations, assumptions, and validation completed during that phase.
+            </p>
 
-<h3>Excel Verification</h3>
+            <div class="pdf-buttons">
 
-<p>
-Every analytical calculation was independently reproduced in Microsoft Excel to verify numerical accuracy, simplify repetitive calculations, and facilitate comparison with computational results generated later in the project.
-</p>
+                <a href="Deliverable1.pdf" target="_blank" class="deliverable-button">
+                    📄 Deliverable I
+                </a>
 
-</div>
+                <a href="Deliverable2.pdf" target="_blank" class="deliverable-button">
+                    📄 Deliverable II
+                </a>
 
-</div>
+                <a href="Deliverable3.pdf" target="_blank" class="deliverable-button">
+                    📄 Deliverable III
+                </a>
 
-<div class="gallery-item reverse">
+            </div>
 
-<img src="matlab.jpg" alt="MATLAB">
+        </div>
 
-<div class="gallery-text">
+    </div>
 
-<h3>MATLAB Automation</h3>
+    <!-- Excel -->
 
-<p>
-The provided MATLAB scripts were modified to generate the aircraft geometry and aerodynamic properties required for USAF Digital DATCOM. This automated much of the aircraft parameter generation process while ensuring consistency throughout the analysis.
-</p>
+    <div class="gallery-item">
 
-</div>
+        <img src="excel.jpg" alt="Excel Verification">
 
-</div>
+        <div class="gallery-text">
 
-<div class="gallery-item">
+            <h3>Excel Verification</h3>
 
-<img src="datcom.jpg" alt="DATCOM">
+            <p>
+            Every analytical calculation was independently reproduced in Microsoft Excel to verify numerical accuracy, automate repetitive calculations, and simplify comparison with computational predictions generated later in the project.
+            </p>
 
-<div class="gallery-text">
+        </div>
 
-<h3>USAF Digital DATCOM</h3>
+    </div>
 
-<p>
-The generated aircraft geometry was analyzed using USAF Digital DATCOM to predict aerodynamic coefficients over multiple flight conditions. These higher-fidelity aerodynamic predictions provided a basis for validating the theoretical calculations.
-</p>
+    <!-- MATLAB -->
 
-</div>
+    <div class="gallery-item reverse">
 
-</div>
+        <img src="matlab.jpg" alt="MATLAB">
 
-<div class="gallery-item reverse">
+        <div class="gallery-text">
 
-<img src="comparison.jpg" alt="Comparison">
+            <h3>MATLAB Automation</h3>
 
-<div class="gallery-text">
+            <p>
+            The provided MATLAB scripts were modified to generate the aircraft geometry and aerodynamic properties required by USAF Digital DATCOM. Automating this process ensured consistency between the analytical calculations and computational analysis.
+            </p>
 
-<h3>Validation & Comparison</h3>
+        </div>
 
-<p>
-Analytical calculations and Digital DATCOM predictions were compared in Microsoft Excel to evaluate the agreement between theoretical and computational methods. This validation process confirmed the reliability of the aerodynamic model before simulation.
-</p>
+    </div>
 
-</div>
+    <!-- DATCOM -->
 
-</div>
+    <div class="gallery-item">
 
-<div class="gallery-item">
+        <img src="datcom.jpg" alt="DATCOM">
 
-<img src="simulink.jpg" alt="Simulink">
+        <div class="gallery-text">
 
-<div class="gallery-text">
+            <h3>USAF Digital DATCOM</h3>
 
-<h3>Simulink Flight Model</h3>
+            <p>
+            The aircraft geometry generated in MATLAB was analyzed using USAF Digital DATCOM to predict aerodynamic coefficients over multiple flight conditions. These higher-fidelity predictions were later compared with the analytical calculations to validate the aircraft design.
+            </p>
 
-<p>
-The validated aerodynamic coefficients were incorporated into a provided MATLAB/Simulink flight dynamics model through aerodynamic lookup tables. The aircraft model was modified to represent the designed geometry and prepared for simulation.
-</p>
+        </div>
 
-</div>
+    </div>
 
-</div>
+    <!-- Comparison -->
 
-<div class="gallery-item reverse">
+    <div class="gallery-item reverse">
 
-<img src="flightgear.jpg" alt="FlightGear">
+        <img src="comparison.jpg" alt="Comparison">
 
-<div class="gallery-text">
+        <div class="gallery-text">
 
-<h3>Flight Validation</h3>
+            <h3>Validation & Comparison</h3>
 
-<p>
-The completed aircraft model was connected to FlightGear for visualization and dynamic testing. Various control inputs were applied to evaluate the aircraft's response and confirm stable longitudinal, lateral, and directional flight behavior.
-</p>
+            <p>
+            Theoretical aerodynamic coefficients obtained from the analytical calculations were compared with the Digital DATCOM predictions using Microsoft Excel. This comparison confirmed the validity of the theoretical model and identified any differences between analytical and computational methods.
+            </p>
 
-</div>
+        </div>
 
-</div>
+    </div>
+
+    <!-- Simulink -->
+
+    <div class="gallery-item">
+
+        <img src="simulink.jpg" alt="Simulink">
+
+        <div class="gallery-text">
+
+            <h3>Simulink Flight Model</h3>
+
+            <p>
+            Once the aircraft demonstrated acceptable stability characteristics, the validated Digital DATCOM aerodynamic coefficients were incorporated into a provided MATLAB/Simulink flight dynamics model using aerodynamic lookup tables. The model was modified to represent the designed aircraft and prepared for simulation.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- FlightGear -->
+
+    <div class="gallery-item reverse">
+
+        <img src="flightgear.jpg" alt="FlightGear">
+
+        <div class="gallery-text">
+
+            <h3>Flight Validation</h3>
+
+            <p>
+            The completed aircraft model was connected to FlightGear for visualization and dynamic flight testing. Multiple control inputs were evaluated to verify stable longitudinal, lateral, and directional flight behavior, confirming the successful implementation of the aircraft model.
+            </p>
+
+        </div>
+
+    </div>
 
 </div>
 
 </section>
-
-<section>
 
 <h2>Technical Skills</h2>
 
@@ -738,26 +761,48 @@ target="_blank">
 
 <style>
 
+.gallery{
+
+display:flex;
+flex-direction:column;
+gap:90px;
+
+}
+
 .gallery-item{
 
 display:flex;
 align-items:center;
-gap:50px;
-margin-bottom:80px;
+gap:70px;
 
 }
 
 .gallery-item img{
 
-width:50%;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,.15);
+width:42%;
+border-radius:16px;
+box-shadow:0 12px 30px rgba(0,0,0,.15);
 
 }
 
 .gallery-text{
 
-flex:1;
+width:58%;
+
+}
+
+.gallery-text h3{
+
+color:#0d3b66;
+margin-bottom:18px;
+font-size:1.6rem;
+
+}
+
+.gallery-text p{
+
+margin-bottom:18px;
+line-height:1.8;
 
 }
 
@@ -767,61 +812,12 @@ flex-direction:row-reverse;
 
 }
 
-.skills{
+.pdf-buttons{
 
 display:flex;
-flex-wrap:wrap;
 gap:15px;
-
-}
-
-.skills span{
-
-background:#edf5fb;
-padding:12px 20px;
-border-radius:30px;
-font-weight:600;
-color:#0d3b66;
-
-}
-
-.takeaways{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-
-}
-
-.takeaways div{
-
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
-
-}
-
-.download-button{
-
-display:inline-block;
-margin-top:30px;
-padding:18px 35px;
-background:#0d3b66;
-color:white;
-text-decoration:none;
-border-radius:40px;
-font-weight:600;
-
-}
-
-footer{
-
-margin-top:80px;
-padding:40px;
-background:#0d3b66;
-color:white;
-text-align:center;
+flex-wrap:wrap;
+margin-top:25px;
 
 }
 
@@ -835,6 +831,12 @@ flex-direction:column;
 }
 
 .gallery-item img{
+
+width:100%;
+
+}
+
+.gallery-text{
 
 width:100%;
 
