@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aircraft Stability Analysis | Laura Cuesta</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+
+--primary:#0d3b66;
+--accent:#00a896;
+--light:#f8f9fa;
+--dark:#1f2937;
+--card:#ffffff;
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'DM Sans',sans-serif;
+background:var(--light);
+color:#333;
+line-height:1.7;
+
+}
+
+nav{
+
+position:fixed;
+top:0;
+width:100%;
+background:white;
+padding:18px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 3px 20px rgba(0,0,0,.08);
+z-index:1000;
+
+}
+
+nav a{
+
+text-decoration:none;
+color:var(--primary);
+font-weight:600;
+
+}
+
+.logo{
+
+font-family:'Playfair Display',serif;
+font-size:1.5rem;
+
+}
+
+.back{
+
+padding:10px 20px;
+background:var(--primary);
+color:white;
+border-radius:40px;
+
+}
+
+header{
+
+padding:140px 30px 80px;
+text-align:center;
+background:linear-gradient(135deg,#edf5fb,#ffffff);
+
+}
+
+header h1{
+
+font-family:'Playfair Display',serif;
+font-size:3.6rem;
+color:var(--primary);
+margin-bottom:20px;
+
+}
+
+.subtitle{
+
+max-width:900px;
+margin:auto;
+font-size:1.15rem;
+color:#555;
+margin-bottom:40px;
+
+}
+
+video{
+
+width:100%;
+max-width:1000px;
+border-radius:18px;
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+section{
+
+max-width:1100px;
+margin:auto;
+padding:80px 30px;
+
+}
+
+h2{
+
+font-family:'Playfair Display',serif;
+color:var(--primary);
+font-size:2.2rem;
+margin-bottom:30px;
+
+}
+
+.snapshot{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+
+}
+
+.snapshot-card{
+
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 6px 20px rgba(0,0,0,.08);
+
+}
+
+.snapshot-card h3{
+
+color:var(--accent);
+font-size:.9rem;
+text-transform:uppercase;
+margin-bottom:10px;
+
+}
+
+.snapshot-card p{
+
+font-weight:600;
+
+}
+
+.overview p{
+
+margin-bottom:25px;
+
+}
+
+.deliverables{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+
+}
+
+.deliverable{
+
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.deliverable h3{
+
+color:var(--primary);
+margin-bottom:15px;
+
+}
+
+.workflow{
+
+background:white;
+padding:50px;
+border-radius:20px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.workflow-step{
+
+display:flex;
+align-items:center;
+margin:18px 0;
+font-size:1.05rem;
+font-weight:600;
+
+}
+
+.arrow{
+
+text-align:center;
+font-size:1.8rem;
+color:var(--accent);
+
+}
+
+@media(max-width:768px){
+
+header h1{
+
+font-size:2.5rem;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<a class="logo" href="index.html">Laura Cuesta</a>
+
+<a class="back" href="index.html">← Back to Portfolio</a>
+
+</nav>
+
+<header>
+
+<h1>Aircraft Stability Analysis & Flight Simulation</h1>
+
+<p class="subtitle">
+
+Designed, analyzed, and simulated a fixed-wing aircraft using classical aircraft stability theory, MATLAB, USAF Digital DATCOM, Simulink, and FlightGear. The project combined analytical calculations, computational validation, and dynamic flight simulation to evaluate the aircraft's stability and overall flight performance.
+
+</p>
+
+<video controls poster="CL-415.jpg">
+
+<source src="flight-demo.mp4" type="video/mp4">
+
+Your browser does not support the video tag.
+
+</video>
+
+</header>
+
+<section>
+
+<h2>Project Snapshot</h2>
+
+<div class="snapshot">
+
+<div class="snapshot-card">
+
+<h3>Role</h3>
+
+<p>Aircraft Design & Stability Analysis</p>
+
+</div>
+
+<div class="snapshot-card">
+
+<h3>Software</h3>
+
+<p>MATLAB, Simulink, Excel, USAF Digital DATCOM, FlightGear</p>
+
+</div>
+
+<div class="snapshot-card">
+
+<h3>Focus</h3>
+
+<p>Aircraft Stability & Control</p>
+
+</div>
+
+<div class="snapshot-card">
+
+<h3>Outcome</h3>
+
+<p>Designed, validated, and successfully simulated a stable aircraft.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="overview">
+
+<h2>Project Overview</h2>
+
+<p>
+
+This semester-long project involved the complete design, analysis, and simulation of a fixed-wing aircraft to evaluate its longitudinal, lateral, and directional stability. Beginning with a proposed aircraft geometry, classical aircraft stability and control theory was used to analytically determine the aerodynamic coefficients and stability derivatives governing the aircraft's behavior. Every calculation was performed by hand following the methods presented throughout the course and independently verified in Microsoft Excel to ensure numerical accuracy and consistency.
+
+</p>
+
+<p>
+
+The provided MATLAB scripts were then modified to generate the aircraft geometry and aerodynamic properties required by USAF Digital DATCOM. Using the same aircraft configuration, Digital DATCOM predicted aerodynamic coefficients for multiple flight conditions, providing a higher-fidelity aerodynamic model that could be directly compared against the analytical calculations. The theoretical and computational results were organized and analyzed in Excel to evaluate the accuracy of the analytical methods and validate the aircraft design.
+
+</p>
+
+<p>
+
+After confirming that the aircraft satisfied the required longitudinal, lateral, and directional stability criteria, the aerodynamic coefficients generated by Digital DATCOM were incorporated into a provided MATLAB/Simulink flight dynamics model through aerodynamic lookup tables. The simulation environment was modified to represent the designed aircraft and connected to FlightGear, where the completed model successfully demonstrated stable flight behavior under various control inputs.
+
+</p>
+
+</section>
+
+<section>
+
+<h2>Project Development</h2>
+
+<p style="margin-bottom:40px;">
+
+The project was completed in three sequential deliverables, each building upon the previous phase. This development process closely followed a real aerospace engineering workflow, progressing from analytical aircraft design to computational validation and finally full flight simulation.
+
+</p>
+
+<div class="deliverables">
+
+<div class="deliverable">
+
+<h3>Deliverable I<br>Aircraft Design & Longitudinal Stability</h3>
+
+<p>
+
+The first phase established the aircraft geometry and focused on longitudinal stability analysis. Lift, drag, downwash, pitching moment, and other aerodynamic coefficients were determined through analytical hand calculations based on aircraft stability theory. Every calculation was independently verified in Microsoft Excel before being compared against USAF Digital DATCOM predictions for the selected flight condition.
+
+</p>
+
+</div>
+
+<div class="deliverable">
+
+<h3>Deliverable II<br>Lateral & Directional Stability Analysis</h3>
+
+<p>
+
+The second phase expanded the analysis to include lateral and directional stability. Stability derivatives associated with the fuselage, wing, vertical tail, and control surfaces were calculated to evaluate roll and yaw behavior. The aircraft's neutral point was determined to verify static stability, while Digital DATCOM results were used to validate the analytical predictions.
+
+</p>
+
+</div>
+
+<div class="deliverable">
+
+<h3>Deliverable III<br>Flight Simulation & Validation</h3>
+
+<p>
+
+The final phase integrated the validated Digital DATCOM aerodynamic coefficients into a provided MATLAB/Simulink flight dynamics model using aerodynamic lookup tables. The simulation environment was modified to represent the designed aircraft and connected to FlightGear, where the aircraft successfully demonstrated stable flight during simulated flight testing.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Engineering Workflow</h2>
+
+<div class="workflow">
+
+<div class="workflow-step">📋 Mission Requirements</div>
+<div class="arrow">↓</div>
+
+<div class="workflow-step">✈ Aircraft Geometry Design</div>
+<div class="arrow">↓</div>
+
+<div class="workflow-step">✏ Hand Stability Calculations</div>
+<div class="arrow">↓</div>
+
+<div class="workflow-step">📊 Excel Verification</div>
+<div class="arrow">↓</div>
+
+<div class="workflow-step">💻 MATLAB Automation</div>
+<div class="arrow">↓</div>
+
+<div class="workflow-step">🛩 USAF Digital DATCOM</div>
+<div class="arrow">↓</div>
+
+<div class="workflow-step">📈 Validation & Comparison</div>
+<div class="arrow">↓</div>
+
+<div class="workflow-step">⚙ Simulink Flight Dynamics Model</div>
+<div class="arrow">↓</div>
+
+<div class="workflow-step">🎥 FlightGear Flight Validation</div>
+
+</div>
+
+</section>
+
+
+  <section>
+
+<h2>Engineering Process</h2>
+
+<p style="margin-bottom:50px;">
+The following images summarize the engineering process from the initial aircraft design through the final flight simulation. Each phase built upon the previous one, creating a complete workflow from analytical calculations to computational validation and dynamic simulation.
+</p>
+
+<div class="gallery">
+
+<div class="gallery-item">
+
+<img src="geometry.jpg" alt="Aircraft Geometry">
+
+<div class="gallery-text">
+
+<h3>Aircraft Geometry</h3>
+
+<p>
+The project began by defining the aircraft geometry, including the wing, fuselage, horizontal tail, and vertical tail dimensions. These geometric properties served as the foundation for every aerodynamic calculation and simulation performed throughout the project.
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item reverse">
+
+<img src="hand_calculations.jpg" alt="Hand Calculations">
+
+<div class="gallery-text">
+
+<h3>Analytical Hand Calculations</h3>
+
+<p>
+Longitudinal, lateral, and directional stability derivatives were calculated using classical aircraft stability and control theory presented throughout the course. These calculations established the theoretical aerodynamic behavior of the aircraft before any computational tools were introduced.
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item">
+
+<img src="excel.jpg" alt="Excel Verification">
+
+<div class="gallery-text">
+
+<h3>Excel Verification</h3>
+
+<p>
+Every analytical calculation was independently reproduced in Microsoft Excel to verify numerical accuracy, simplify repetitive calculations, and facilitate comparison with computational results generated later in the project.
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item reverse">
+
+<img src="matlab.jpg" alt="MATLAB">
+
+<div class="gallery-text">
+
+<h3>MATLAB Automation</h3>
+
+<p>
+The provided MATLAB scripts were modified to generate the aircraft geometry and aerodynamic properties required for USAF Digital DATCOM. This automated much of the aircraft parameter generation process while ensuring consistency throughout the analysis.
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item">
+
+<img src="datcom.jpg" alt="DATCOM">
+
+<div class="gallery-text">
+
+<h3>USAF Digital DATCOM</h3>
+
+<p>
+The generated aircraft geometry was analyzed using USAF Digital DATCOM to predict aerodynamic coefficients over multiple flight conditions. These higher-fidelity aerodynamic predictions provided a basis for validating the theoretical calculations.
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item reverse">
+
+<img src="comparison.jpg" alt="Comparison">
+
+<div class="gallery-text">
+
+<h3>Validation & Comparison</h3>
+
+<p>
+Analytical calculations and Digital DATCOM predictions were compared in Microsoft Excel to evaluate the agreement between theoretical and computational methods. This validation process confirmed the reliability of the aerodynamic model before simulation.
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item">
+
+<img src="simulink.jpg" alt="Simulink">
+
+<div class="gallery-text">
+
+<h3>Simulink Flight Model</h3>
+
+<p>
+The validated aerodynamic coefficients were incorporated into a provided MATLAB/Simulink flight dynamics model through aerodynamic lookup tables. The aircraft model was modified to represent the designed geometry and prepared for simulation.
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item reverse">
+
+<img src="flightgear.jpg" alt="FlightGear">
+
+<div class="gallery-text">
+
+<h3>Flight Validation</h3>
+
+<p>
+The completed aircraft model was connected to FlightGear for visualization and dynamic testing. Various control inputs were applied to evaluate the aircraft's response and confirm stable longitudinal, lateral, and directional flight behavior.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Technical Skills</h2>
+
+<div class="skills">
+
+<span>MATLAB</span>
+
+<span>Simulink</span>
+
+<span>USAF Digital DATCOM</span>
+
+<span>FlightGear</span>
+
+<span>Microsoft Excel</span>
+
+<span>Aircraft Stability</span>
+
+<span>Flight Dynamics</span>
+
+<span>Aerodynamics</span>
+
+<span>Aircraft Design</span>
+
+<span>Control Systems</span>
+
+<span>Engineering Analysis</span>
+
+<span>Data Validation</span>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Engineering Takeaways</h2>
+
+<div class="takeaways">
+
+<div>
+
+<h3>✔ Applied Classical Aircraft Stability Theory</h3>
+
+<p>
+Performed complete longitudinal, lateral, and directional stability analyses using analytical methods and engineering assumptions.
+</p>
+
+</div>
+
+<div>
+
+<h3>✔ Validated Analytical Models</h3>
+
+<p>
+Compared theoretical predictions with USAF Digital DATCOM results to assess the accuracy of the analytical approach.
+</p>
+
+</div>
+
+<div>
+
+<h3>✔ Automated Engineering Calculations</h3>
+
+<p>
+Modified MATLAB scripts to generate aircraft properties and automate preparation of Digital DATCOM input data.
+</p>
+
+</div>
+
+<div>
+
+<h3>✔ Demonstrated Flight Performance</h3>
+
+<p>
+Integrated validated aerodynamic data into a Simulink flight dynamics model and successfully demonstrated stable flight in FlightGear.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Final Technical Report</h2>
+
+<p>
+
+The complete report includes the aircraft geometry development, analytical calculations, Digital DATCOM analysis, comparison of results, Simulink implementation, FlightGear simulation, and supporting MATLAB and Excel files developed throughout the project.
+
+</p>
+
+<a class="download-button"
+href="Deliverable 3 - Laura Cuesta Bret.pdf"
+target="_blank">
+
+📄 View Full Technical Report
+
+</a>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Laura Cuesta
+
+</p>
+
+</footer>
+
+<style>
+
+.gallery-item{
+
+display:flex;
+align-items:center;
+gap:50px;
+margin-bottom:80px;
+
+}
+
+.gallery-item img{
+
+width:50%;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+.gallery-text{
+
+flex:1;
+
+}
+
+.reverse{
+
+flex-direction:row-reverse;
+
+}
+
+.skills{
+
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+
+}
+
+.skills span{
+
+background:#edf5fb;
+padding:12px 20px;
+border-radius:30px;
+font-weight:600;
+color:#0d3b66;
+
+}
+
+.takeaways{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+
+}
+
+.takeaways div{
+
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.download-button{
+
+display:inline-block;
+margin-top:30px;
+padding:18px 35px;
+background:#0d3b66;
+color:white;
+text-decoration:none;
+border-radius:40px;
+font-weight:600;
+
+}
+
+footer{
+
+margin-top:80px;
+padding:40px;
+background:#0d3b66;
+color:white;
+text-align:center;
+
+}
+
+@media(max-width:900px){
+
+.gallery-item,
+.reverse{
+
+flex-direction:column;
+
+}
+
+.gallery-item img{
+
+width:100%;
+
+}
+
+}
+
+</style>
+
+</body>
+
+</html>
