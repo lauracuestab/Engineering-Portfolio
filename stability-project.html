@@ -555,38 +555,29 @@ The following images summarize the engineering workflow from the initial aircraf
 
 </div>
 
-    <!-- MATLAB -->
-
-    <div class="gallery-item reverse">
-
-        <img src="matlab.jpg" alt="MATLAB">
-
-        <div class="gallery-text">
-
-            <h3>MATLAB Automation</h3>
-
-            <p>
-            The provided MATLAB scripts were modified to generate the aircraft geometry and aerodynamic properties required by USAF Digital DATCOM. Automating this process ensured consistency between the analytical calculations and computational analysis.
-            </p>
-
-        </div>
-
     </div>
 
     <!-- DATCOM -->
 
     <div class="gallery-item">
 
-        <img src="datcom.jpg" alt="DATCOM">
+        <img src="datcom_in.jpg" alt="DATCOM IN">
+        <img src="datcom_out.jpg" alt="DATCOM OUT">
 
         <div class="gallery-text">
 
             <h3>USAF Digital DATCOM</h3>
 
             <p>
-            The aircraft geometry generated in MATLAB was analyzed using USAF Digital DATCOM to predict aerodynamic coefficients over multiple flight conditions. These higher-fidelity predictions were later compared with the analytical calculations to validate the aircraft design.
+            The aircraft geometry generated in MATLAB was analyzed using USAF Digital DATCOM to predict aerodynamic coefficients over multiple flight conditions. These higher-fidelity predictions were later compared with the analytical calculations to validate the aircraft design. 
+                A MATLAB code analysed the data calculated by DATCOM, and the following graphs were plotted. 
             </p>
 
+    <div class="gallery-item">
+
+        <img src="CL vs AoA.jpg" alt="CL vs AoA">
+        <img src="CL vs CD.jpg" alt="CL vs CD">
+        <img src="Cm vs AoA.jpg" alt="Cm vs AoA">
         </div>
 
     </div>
@@ -631,14 +622,10 @@ The following images summarize the engineering workflow from the initial aircraf
 
     <div class="gallery-item reverse">
 
-        <img src="flightgear.jpg" alt="FlightGear">
-
-        <div class="gallery-text">
-
             <h3>Flight Validation</h3>
 
             <p>
-            The completed aircraft model was connected to FlightGear for visualization and dynamic flight testing. Multiple control inputs were evaluated to verify stable longitudinal, lateral, and directional flight behavior, confirming the successful implementation of the aircraft model.
+            The completed aircraft model was connected to FlightGear for visualization and dynamic flight testing as seen in the video above. Multiple control inputs were evaluated to verify stable longitudinal, lateral, and directional flight behavior, confirming the successful implementation of the aircraft model.
             </p>
 
         </div>
