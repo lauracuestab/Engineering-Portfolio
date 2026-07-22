@@ -272,41 +272,31 @@ Designed, analyzed, and simulated a fixed-wing aircraft using classical aircraft
 
 <div class="snapshot">
 
-<div class="snapshot-card">
+    <div class="snapshot-card">
+        <h3>Role</h3>
+        <p>Aircraft Design & Stability Analysis</p>
+    </div>
 
-<h3>Role</h3>
+    <div class="snapshot-card">
+        <h3>Software</h3>
+        <p>MATLAB, Simulink, Excel, USAF Digital DATCOM, FlightGear</p>
+    </div>
 
-<p>Aircraft Design & Stability Analysis</p>
+    <div class="snapshot-card">
+        <h3>Focus</h3>
+        <p>Aircraft Stability & Control</p>
+    </div>
 
-</div>
-
-<div class="snapshot-card">
-
-<h3>Software</h3>
-
-<p>MATLAB, Simulink, Excel, USAF Digital DATCOM, FlightGear</p>
-
-</div>
-
-<div class="snapshot-card">
-
-<h3>Focus</h3>
-
-<p>Aircraft Stability & Control</p>
-
-</div>
-
-<div class="snapshot-card">
-
-<h3>Outcome</h3>
-
-<p>Designed, validated, and successfully simulated a stable aircraft.</p>
-
-</div>
+    <div class="snapshot-card">
+        <h3>Outcome</h3>
+        <p>Designed, validated, and successfully simulated a stable aircraft.</p>
+    </div>
 
 </div>
 
 </section>
+
+<!-- ================= PROJECT OVERVIEW ================= -->
 
 <section class="overview">
 
@@ -320,7 +310,7 @@ This semester-long project involved the complete design, analysis, and simulatio
 
 <p>
 
-The provided MATLAB scripts were then modified to generate the aircraft geometry and aerodynamic properties required by USAF Digital DATCOM. Using the same aircraft configuration, Digital DATCOM predicted aerodynamic coefficients for multiple flight conditions, providing a higher-fidelity aerodynamic model that could be directly compared against the analytical calculations. The theoretical and computational results were organized and analyzed in Excel to evaluate the accuracy of the analytical methods and validate the aircraft design.
+The provided MATLAB scripts were modified to generate the aircraft geometry and aerodynamic properties required by USAF Digital DATCOM. Using the same aircraft configuration, Digital DATCOM predicted aerodynamic coefficients for multiple flight conditions, providing a higher-fidelity aerodynamic model that could be directly compared against the analytical calculations. The theoretical and computational results were organized and analyzed in Excel to evaluate the accuracy of the analytical methods and validate the aircraft design.
 
 </p>
 
@@ -332,57 +322,97 @@ After confirming that the aircraft satisfied the required longitudinal, lateral,
 
 </section>
 
+<!-- ================= PROJECT DEVELOPMENT ================= -->
+
 <section>
 
 <h2>Project Development</h2>
 
 <p style="margin-bottom:40px;">
 
-The project was completed in three sequential deliverables, each building upon the previous phase. This development process closely followed a real aerospace engineering workflow, progressing from analytical aircraft design to computational validation and finally full flight simulation.
+The project was completed in three sequential deliverables, each building upon the previous phase. This development process closely followed a typical aerospace engineering workflow, progressing from analytical aircraft design to computational validation and finally full flight simulation. Each deliverable documents the engineering methodology, calculations, and validation completed during that stage of the project.
 
 </p>
 
 <div class="deliverables">
 
-<div class="deliverable">
+    <!-- Deliverable I -->
 
-<h3>Deliverable I<br>Aircraft Design & Longitudinal Stability</h3>
+    <div class="deliverable">
 
-<p>
+        <h3>Deliverable I<br>Aircraft Design & Longitudinal Stability</h3>
 
-The first phase established the aircraft geometry and focused on longitudinal stability analysis. Lift, drag, downwash, pitching moment, and other aerodynamic coefficients were determined through analytical hand calculations based on aircraft stability theory. Every calculation was independently verified in Microsoft Excel before being compared against USAF Digital DATCOM predictions for the selected flight condition.
+        <p>
 
-</p>
+        The first phase established the aircraft geometry and focused on longitudinal stability analysis. Lift, drag, downwash, pitching moment, and other aerodynamic coefficients were determined through analytical hand calculations based on aircraft stability theory. Every calculation was independently verified in Microsoft Excel before being compared against USAF Digital DATCOM predictions for the selected flight condition.
 
-</div>
+        </p>
 
-<div class="deliverable">
+        <p style="font-size:0.95rem; color:#666; margin-top:15px;">
 
-<h3>Deliverable II<br>Lateral & Directional Stability Analysis</h3>
+        Includes aircraft geometry development, longitudinal stability calculations, Excel verification, and DATCOM validation.
 
-<p>
+        </p>
 
-The second phase expanded the analysis to include lateral and directional stability. Stability derivatives associated with the fuselage, wing, vertical tail, and control surfaces were calculated to evaluate roll and yaw behavior. The aircraft's neutral point was determined to verify static stability, while Digital DATCOM results were used to validate the analytical predictions.
+        <a href="Deliverable1.pdf" target="_blank" class="deliverable-button">
+            📄 View Deliverable PDF
+        </a>
 
-</p>
+    </div>
 
-</div>
+    <!-- Deliverable II -->
 
-<div class="deliverable">
+    <div class="deliverable">
 
-<h3>Deliverable III<br>Flight Simulation & Validation</h3>
+        <h3>Deliverable II<br>Lateral & Directional Stability Analysis</h3>
 
-<p>
+        <p>
 
-The final phase integrated the validated Digital DATCOM aerodynamic coefficients into a provided MATLAB/Simulink flight dynamics model using aerodynamic lookup tables. The simulation environment was modified to represent the designed aircraft and connected to FlightGear, where the aircraft successfully demonstrated stable flight during simulated flight testing.
+        The second phase expanded the analysis to include lateral and directional stability. Stability derivatives associated with the fuselage, wing, vertical tail, and control surfaces were calculated to evaluate roll and yaw behavior. The aircraft's neutral point was determined to verify static stability, while Digital DATCOM results were used to validate the analytical predictions.
 
-</p>
+        </p>
 
-</div>
+        <p style="font-size:0.95rem; color:#666; margin-top:15px;">
+
+        Includes lateral and directional stability calculations, derivative validation, neutral point analysis, and comparison with Digital DATCOM.
+
+        </p>
+
+        <a href="Deliverable2.pdf" target="_blank" class="deliverable-button">
+            📄 View Deliverable PDF
+        </a>
+
+    </div>
+
+    <!-- Deliverable III -->
+
+    <div class="deliverable">
+
+        <h3>Deliverable III<br>Flight Simulation & Validation</h3>
+
+        <p>
+
+        The final phase integrated the validated Digital DATCOM aerodynamic coefficients into a provided MATLAB/Simulink flight dynamics model using aerodynamic lookup tables. The simulation environment was modified to represent the designed aircraft and connected to FlightGear, where the aircraft successfully demonstrated stable flight during simulated flight testing.
+
+        </p>
+
+        <p style="font-size:0.95rem; color:#666; margin-top:15px;">
+
+        Includes Simulink implementation, aerodynamic lookup tables, flight simulation, FlightGear visualization, and final validation.
+
+        </p>
+
+        <a href="Deliverable3.pdf" target="_blank" class="deliverable-button">
+            📄 View Deliverable PDF
+        </a>
+
+    </div>
 
 </div>
 
 </section>
+
+<!-- ================= ENGINEERING WORKFLOW ================= -->
 
 <section>
 
@@ -390,36 +420,62 @@ The final phase integrated the validated Digital DATCOM aerodynamic coefficients
 
 <div class="workflow">
 
-<div class="workflow-step">📋 Mission Requirements</div>
-<div class="arrow">↓</div>
+    <div class="workflow-step">📋 Mission Requirements</div>
+    <div class="arrow">↓</div>
 
-<div class="workflow-step">✈ Aircraft Geometry Design</div>
-<div class="arrow">↓</div>
+    <div class="workflow-step">✈ Aircraft Geometry Design</div>
+    <div class="arrow">↓</div>
 
-<div class="workflow-step">✏ Hand Stability Calculations</div>
-<div class="arrow">↓</div>
+    <div class="workflow-step">✏ Analytical Hand Calculations</div>
+    <div class="arrow">↓</div>
 
-<div class="workflow-step">📊 Excel Verification</div>
-<div class="arrow">↓</div>
+    <div class="workflow-step">📊 Excel Verification</div>
+    <div class="arrow">↓</div>
 
-<div class="workflow-step">💻 MATLAB Automation</div>
-<div class="arrow">↓</div>
+    <div class="workflow-step">💻 MATLAB Geometry Generation</div>
+    <div class="arrow">↓</div>
 
-<div class="workflow-step">🛩 USAF Digital DATCOM</div>
-<div class="arrow">↓</div>
+    <div class="workflow-step">🛩 USAF Digital DATCOM Analysis</div>
+    <div class="arrow">↓</div>
 
-<div class="workflow-step">📈 Validation & Comparison</div>
-<div class="arrow">↓</div>
+    <div class="workflow-step">📈 Compare Theoretical & DATCOM Results</div>
+    <div class="arrow">↓</div>
 
-<div class="workflow-step">⚙ Simulink Flight Dynamics Model</div>
-<div class="arrow">↓</div>
+    <div class="workflow-step">⚙ Simulink Flight Dynamics Model</div>
+    <div class="arrow">↓</div>
 
-<div class="workflow-step">🎥 FlightGear Flight Validation</div>
+    <div class="workflow-step">🎥 FlightGear Flight Validation</div>
 
 </div>
 
 </section>
 
+<!-- ================= CSS ================= -->
+
+<style>
+
+.deliverable-button{
+
+display:inline-block;
+margin-top:20px;
+padding:12px 22px;
+background:#0d3b66;
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-weight:600;
+transition:0.3s ease;
+
+}
+
+.deliverable-button:hover{
+
+background:#00a896;
+transform:translateY(-2px);
+
+}
+
+</style>
 
   <section>
 
