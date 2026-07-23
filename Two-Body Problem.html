@@ -1,168 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
 
-.process-image{
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    width:100%;
-    max-width:900px;
+<title>Two-Body Orbit Analysis | Laura Cuesta Bret</title>
 
-    height:450px;           /* all images same height */
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-    object-fit:cover;       /* crops instead of stretching */
+<style>
 
-    display:block;
-    margin:40px auto;
+:root{
 
-    border-radius:18px;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
-
-}
-
-.process-section{
-
-    background:white;
-
-    padding:50px;
-
-    margin:70px 0;
-
-    border-radius:22px;
-
-    box-shadow:0 12px 30px rgba(0,0,0,.08);
-
-    border:none;
+--primary:#0d3b66;
+--accent:#00a896;
+--light:#f8f9fa;
+--dark:#1f2937;
+--card:#ffffff;
 
 }
 
-section{
+*{
 
-    max-width:1150px;
-
-    margin:auto;
-
-    padding:110px 30px;
+margin:0;
+padding:0;
+box-sizing:border-box;
 
 }
 
-h2{
+html{
 
-    font-size:2.7rem;
-
-    margin-bottom:50px;
-
-    position:relative;
+scroll-behavior:smooth;
 
 }
 
-h2::after{
+body{
 
-    content:"";
-
-    display:block;
-
-    width:70px;
-
-    height:4px;
-
-    background:#00a896;
-
-    margin-top:15px;
-
-    border-radius:5px;
+font-family:'DM Sans',sans-serif;
+background:var(--light);
+color:#333;
+line-height:1.7;
 
 }
 
-.snapshot-card{
+/* ===========================================
+NAVIGATION
+=========================================== */
 
-    transition:.35s ease;
+nav{
 
-}
-
-.snapshot-card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 18px 40px rgba(0,0,0,.12);
-
-}
-
-.download-button,
-.deliverable-button{
-
-    padding:15px 28px;
-
-    font-size:1rem;
-
-    border-radius:50px;
-
-    box-shadow:0 8px 20px rgba(13,59,102,.18);
+position:fixed;
+top:0;
+width:100%;
+background:white;
+padding:18px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 3px 20px rgba(0,0,0,.08);
+z-index:1000;
 
 }
 
-.download-button:hover,
-.deliverable-button:hover{
+nav a{
 
-    transform:translateY(-3px);
-
-    box-shadow:0 15px 35px rgba(13,59,102,.25);
-
-}
-
-.workflow{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    flex-wrap:wrap;
-
-    gap:20px;
+text-decoration:none;
+color:var(--primary);
+font-weight:600;
 
 }
 
-.workflow-step{
+.logo{
 
-    background:white;
-
-    padding:25px;
-
-    border-radius:15px;
-
-    width:180px;
-
-    text-align:center;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+font-family:'Playfair Display',serif;
+font-size:1.5rem;
 
 }
 
-.overview p{
+.back{
 
-    max-width:900px;
+padding:10px 20px;
+background:var(--primary);
+color:white;
+border-radius:40px;
 
-    margin:0 auto 25px auto;
+}
 
-    font-size:1.08rem;
+/* ===========================================
+HEADER
+=========================================== */
+
+header{
+
+padding:140px 30px 80px;
+text-align:center;
+background:linear-gradient(135deg,#edf5fb,#ffffff);
+
+}
+
+header h1{
+
+font-family:'Playfair Display',serif;
+font-size:3.5rem;
+color:var(--primary);
+margin-bottom:20px;
+
+}
+
+.subtitle{
+
+max-width:900px;
+margin:auto;
+font-size:1.15rem;
+color:#555;
+margin-bottom:45px;
 
 }
 
 .project-thumb img{
 
-    width:100%;
-
-    max-width:900px;
-
-    height:500px;
-
-    object-fit:cover;
-
-    border-radius:22px;
-
-    box-shadow:0 20px 45px rgba(0,0,0,.18);
+width:100%;
+max-width:900px;
+border-radius:20px;
+box-shadow:0 18px 40px rgba(0,0,0,.15);
 
 }
+
+/* ===========================================
+GENERAL
+=========================================== */
+
+section{
+
+max-width:1100px;
+margin:auto;
+padding:80px 30px;
+
+}
+
+h2{
+
+font-family:'Playfair Display',serif;
+font-size:2.2rem;
+color:var(--primary);
+margin-bottom:35px;
+
+}
+
+h2::after{
+
+content:"";
+display:block;
+width:70px;
+height:4px;
+background:#00a896;
+margin-top:12px;
+border-radius:10px;
+
+}
+
+p{
+
+color:#444;
+line-height:1.8;
+
+}
+
+/* ===========================================
+SNAPSHOT
+=========================================== */
+
+.snapshot{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+
+}
+
+.snapshot-card{
+
+background:white;
+padding:28px;
+border-radius:18px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+transition:.3s ease;
+
+}
+
+.snapshot-card:hover{
+
+transform:translateY(-6px);
+box-shadow:0 16px 35px rgba(0,0,0,.12);
+
+}
+
+.snapshot-card h3{
+
+color:var(--accent);
+font-size:.9rem;
+text-transform:uppercase;
+margin-bottom:12px;
+
+}
+
+.snapshot-card p{
+
+font-weight:600;
+
+}
+
+/* ===========================================
+MOBILE
+=========================================== */
+
+@media(max-width:768px){
+
+header h1{
+
+font-size:2.5rem;
+
+}
+
+section{
+
+padding:60px 25px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+<a class="logo" href="index.html">LCB</a>
+
+<a class="back" href="index.html">← Back to Portfolio</a>
+
+</nav>
+
+<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -170,16 +256,17 @@ h2::after{
 
 <p class="subtitle">
 
-Developed an original MATLAB program to perform classical orbital analysis of an Earth-orbiting satellite. The project calculated orbital elements, ground-station observations, and propagated the orbit using numerical integration to verify orbital motion and conservation of energy.
+Developed an original MATLAB program to perform classical orbit analysis of an Earth-orbiting satellite. The project computed orbital elements, ground-station observations, and propagated the orbit using numerical integration with ODE45 to validate satellite motion and conservation of orbital energy.
 
 </p>
 
 <div class="project-thumb">
-    <img src="3D Orbit.png" alt="3D Orbit Propagation">
+
+<img src="3D Orbit.png" alt="3D Orbit Plot">
+
 </div>
 
 </header>
-
 
 <!-- ================= PROJECT SNAPSHOT ================= -->
 
@@ -190,23 +277,35 @@ Developed an original MATLAB program to perform classical orbital analysis of an
 <div class="snapshot">
 
 <div class="snapshot-card">
+
 <h3>Role</h3>
+
 <p>Orbital Mechanics & MATLAB Development</p>
+
 </div>
 
 <div class="snapshot-card">
+
 <h3>Software</h3>
-<p>MATLAB, ODE45</p>
+
+<p>MATLAB • ODE45</p>
+
 </div>
 
 <div class="snapshot-card">
+
 <h3>Focus</h3>
+
 <p>Classical Orbit Determination</p>
+
 </div>
 
 <div class="snapshot-card">
+
 <h3>Outcome</h3>
-<p>Validated orbital propagation and satellite trajectory.</p>
+
+<p>Validated orbital propagation and numerical accuracy.</p>
+
 </div>
 
 </div>
@@ -222,18 +321,61 @@ Developed an original MATLAB program to perform classical orbital analysis of an
 
 <p>
 
-This project developed an original MATLAB program to perform a complete classical orbital analysis from an initial position and velocity vector. The code computed the six classical orbital elements, determined ground-station range, elevation, and azimuth angles, and propagated the satellite's motion using the two-body equations of motion with MATLAB's ODE45 solver.
-
-</p>
-
-<p>
-
-The propagated trajectory verified conservation of specific orbital energy and angular momentum while producing a three-dimensional visualization of the satellite's orbit. Results were compared across multiple orbital epochs to confirm the expected behavior of an ideal two-body system.
+This project focused on developing an original MATLAB program to perform a complete two-body orbital analysis from a given position and velocity vector. The program calculated the six classical orbital elements, determined satellite visibility from a ground station through range, azimuth, and elevation calculations, and propagated the orbit using MATLAB's ODE45 numerical solver. The resulting trajectory and orbital parameters were used to verify the expected behavior of an ideal two-body system. :contentReference[oaicite:0]{index=0}
 
 </p>
 
 </section>
 
+<!-- ================= ENGINEERING WORKFLOW ================= -->
+
+<section>
+
+<h2>Engineering Workflow</h2>
+
+<div class="workflow">
+
+<div class="workflow-step">
+
+🛰 Initial State Vectors
+
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="workflow-step">
+
+📐 Compute Classical Orbital Elements
+
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="workflow-step">
+
+🌍 Ground Station Visibility Analysis
+
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="workflow-step">
+
+💻 Numerical Orbit Propagation (ODE45)
+
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="workflow-step">
+
+📈 Validate Energy, Momentum & Orbit
+
+</div>
+
+</div>
+
+</section>
 
 <!-- ================= ENGINEERING PROCESS ================= -->
 
@@ -241,83 +383,68 @@ The propagated trajectory verified conservation of specific orbital energy and a
 
 <h2>Engineering Process</h2>
 
-<div class="workflow">
+<p style="margin-bottom:50px;">
 
-<div class="workflow-step">🛰 Initial Position & Velocity</div>
+The project followed a structured orbital mechanics workflow beginning with an initial state vector and progressing through orbital element determination, ground-station analysis, numerical orbit propagation, and validation of the simulated trajectory. Three key stages of the project are highlighted below.
 
-<div class="arrow">↓</div>
-
-<div class="workflow-step">📐 Compute Orbital Elements</div>
-
-<div class="arrow">↓</div>
-
-<div class="workflow-step">🌍 Ground Station Analysis</div>
-
-<div class="arrow">↓</div>
-
-<div class="workflow-step">💻 Orbit Propagation with ODE45</div>
-
-<div class="arrow">↓</div>
-
-<div class="workflow-step">📈 Validate Results & Visualize Orbit</div>
-
-</div>
-
-</section>
+</p>
 
 
-<!-- ================= PROJECT HIGHLIGHTS ================= -->
+<!-- ================= ENGINEERING HIGHLIGHTS ================= -->
 
 <section>
 
-<h2>Project Highlights</h2>
+<h2>Engineering Highlights</h2>
 
+<!-- ================= ORBIT PROPAGATION ================= -->
 
 <div class="process-section">
 
 <h3>Orbit Propagation</h3>
 
-<img src="Two-Body-Problem.jpg"
-     alt="Orbit Propagation"
+<img src="3D Orbit.png"
+     alt="3D Orbit Propagation"
      class="process-image">
 
 <p>
 
-A numerical two-body propagator was developed using MATLAB's ODE45 solver to simulate the satellite trajectory over multiple orbital periods. The resulting orbit confirmed the analytical orbital elements and expected elliptical motion.
+Using the calculated orbital elements, a numerical two-body propagator was developed in MATLAB with the ODE45 solver to simulate the satellite trajectory over two complete orbital periods. The resulting three-dimensional orbit confirmed the expected elliptical trajectory and correctly identified the satellite position at apoapsis.
 
 </p>
 
 </div>
 
+<!-- ================= GROUND STATION ANALYSIS ================= -->
 
 <div class="process-section">
 
 <h3>Ground Station Analysis</h3>
 
 <img src="ρσβ_Station_plot.png"
-     alt="Ground Station Results"
+     alt="Ground Station Analysis"
      class="process-image">
 
 <p>
 
-Coordinate transformations between the Earth-Centered Inertial (ECI) and South-East-Zenith (SEZ) frames were implemented to compute satellite range, elevation, and azimuth relative to the Boston Air Force Station.
+Coordinate transformations between the Earth-Centered Inertial (ECI) and South-East-Zenith (SEZ) reference frames were implemented to determine the satellite's range, azimuth, and elevation relative to the Boston Air Force Station. These calculations provided the ground-station observations needed to evaluate satellite visibility.
 
 </p>
 
 </div>
 
+<!-- ================= VALIDATION ================= -->
 
 <div class="process-section">
 
-<h3>Conservation Verification</h3>
+<h3>Model Validation</h3>
 
-<img src="Ueff plot .png"
-     alt="Energy and Angular Momentum"
+<img src="Ueff plot.png"
+     alt="Energy and Angular Momentum Verification"
      class="process-image">
 
 <p>
 
-Specific orbital energy and angular momentum were monitored throughout the propagation. Both quantities remained nearly constant, verifying the accuracy of the numerical integration and confirming ideal two-body motion.
+The propagated orbit was validated by monitoring the specific orbital energy and angular momentum throughout the simulation. Both quantities remained nearly constant during propagation, confirming the accuracy of the numerical integration and demonstrating the expected behavior of an ideal two-body system.
 
 </p>
 
@@ -325,22 +452,23 @@ Specific orbital energy and angular momentum were monitored throughout the propa
 
 </section>
 
-
-<!-- ================= DOWNLOADS ================= -->
+<!-- ================= PROJECT FILES ================= -->
 
 <section>
 
 <h2>Project Files</h2>
 
-<p>
+<p style="max-width:850px; margin-bottom:35px;">
 
-The complete report describes the theoretical development, MATLAB implementation, numerical methods, and validation results. The original MATLAB source code used to generate all calculations and figures is also available.
+The complete report documents the orbital mechanics theory, MATLAB implementation, numerical integration, and validation of the simulated orbit. The MATLAB source code used to perform the analysis and generate all figures is also available.
 
 </p>
 
+<div class="pdf-buttons">
+
 <a href="AE313HON Final Report.pdf"
 target="_blank"
-class="download-button">
+class="deliverable-button">
 
 📄 Final Technical Report
 
@@ -348,14 +476,15 @@ class="download-button">
 
 <a href="CuestaBret_Dolha_FinalProject.pdf"
 target="_blank"
-class="download-button">
+class="deliverable-button">
 
 💻 MATLAB Source Code
 
 </a>
 
-</section>
+</div>
 
+</section>
 
 <!-- ================= TECHNICAL SKILLS ================= -->
 
@@ -385,8 +514,7 @@ class="download-button">
 
 </section>
 
-
-<!-- ================= TAKEAWAYS ================= -->
+<!-- ================= ENGINEERING TAKEAWAYS ================= -->
 
 <section>
 
@@ -396,11 +524,11 @@ class="download-button">
 
 <div>
 
-<h3>✔ Developed Original MATLAB Software</h3>
+<h3>✔ Applied Classical Orbital Mechanics</h3>
 
 <p>
 
-Created a MATLAB program to calculate orbital elements, perform orbit propagation, and automate analysis of satellite motion.
+Calculated the six classical orbital elements from position and velocity vectors and analyzed the resulting satellite orbit using analytical orbital mechanics methods.
 
 </p>
 
@@ -408,11 +536,11 @@ Created a MATLAB program to calculate orbital elements, perform orbit propagatio
 
 <div>
 
-<h3>✔ Applied Classical Orbital Mechanics</h3>
+<h3>✔ Developed MATLAB Simulation Tools</h3>
 
 <p>
 
-Implemented vector algebra, coordinate transformations, and numerical methods to analyze satellite trajectories.
+Created an original MATLAB program that automated orbital element calculations, ground-station visibility analysis, and numerical orbit propagation using ODE45.
 
 </p>
 
@@ -424,7 +552,7 @@ Implemented vector algebra, coordinate transformations, and numerical methods to
 
 <p>
 
-Validated conservation of orbital energy and angular momentum while generating three-dimensional orbit visualizations.
+Validated the propagated orbit by confirming conservation of specific orbital energy and angular momentum while generating three-dimensional orbit visualizations.
 
 </p>
 
@@ -433,3 +561,242 @@ Validated conservation of orbital energy and angular momentum while generating t
 </div>
 
 </section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+
+© 2026 Laura Cuesta Bret
+
+</p>
+
+</footer>
+
+<!-- ================= PAGE-SPECIFIC CSS ================= -->
+
+<style>
+
+/* ===========================================
+ENGINEERING PROCESS
+=========================================== */
+
+.process-section{
+
+padding:70px 0;
+border-bottom:1px solid #e8e8e8;
+
+}
+
+.process-section:last-child{
+
+border-bottom:none;
+
+}
+
+.process-section h3{
+
+font-family:'Playfair Display',serif;
+color:#0d3b66;
+font-size:1.8rem;
+margin-bottom:25px;
+
+}
+
+.process-section p{
+
+max-width:850px;
+margin:25px auto 0;
+line-height:1.8;
+color:#444;
+
+}
+
+/* ===========================================
+IMAGES
+=========================================== */
+
+.process-image{
+
+display:block;
+width:100%;
+max-width:850px;
+height:auto;
+margin:35px auto;
+border-radius:18px;
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+/* ===========================================
+WORKFLOW
+=========================================== */
+
+.workflow{
+
+background:white;
+padding:45px;
+border-radius:20px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.workflow-step{
+
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:1.1rem;
+font-weight:600;
+margin:20px 0;
+
+}
+
+.arrow{
+
+text-align:center;
+font-size:2rem;
+color:#00a896;
+margin:8px 0;
+
+}
+
+/* ===========================================
+BUTTONS
+=========================================== */
+
+.pdf-buttons{
+
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:35px;
+
+}
+
+.deliverable-button{
+
+display:inline-block;
+padding:14px 28px;
+background:#0d3b66;
+color:white;
+text-decoration:none;
+border-radius:40px;
+font-weight:600;
+transition:.3s ease;
+
+}
+
+.deliverable-button:hover{
+
+background:#00a896;
+transform:translateY(-3px);
+
+}
+
+/* ===========================================
+SKILLS
+=========================================== */
+
+.skills{
+
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+margin-top:35px;
+
+}
+
+.skills span{
+
+background:white;
+padding:12px 22px;
+border-radius:40px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+font-weight:600;
+
+}
+
+/* ===========================================
+TAKEAWAYS
+=========================================== */
+
+.takeaways{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+
+}
+
+.takeaways div{
+
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.takeaways h3{
+
+color:#0d3b66;
+margin-bottom:15px;
+
+}
+
+/* ===========================================
+FOOTER
+=========================================== */
+
+footer{
+
+background:#0d3b66;
+color:white;
+text-align:center;
+padding:40px 20px;
+margin-top:80px;
+
+}
+
+footer p{
+
+color:white;
+
+}
+
+/* ===========================================
+MOBILE
+=========================================== */
+
+@media(max-width:768px){
+
+.process-section{
+
+padding:50px 0;
+
+}
+
+.process-section h3{
+
+font-size:1.5rem;
+
+}
+
+.workflow{
+
+padding:30px 20px;
+
+}
+
+}
+
+</style>
+
+</body>
+
+</html>
+
