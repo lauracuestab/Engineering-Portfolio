@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LEGO Aston Martin Valkyrie CAD Project | Laura Cuesta Bret</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+
+--primary:#0d3b66;
+--accent:#00a896;
+--light:#f8f9fa;
+--dark:#1f2937;
+--card:#ffffff;
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'DM Sans',sans-serif;
+background:var(--light);
+color:#333;
+line-height:1.7;
+
+}
+
+/* ===========================================
+NAVIGATION
+=========================================== */
+
+nav{
+
+position:fixed;
+top:0;
+width:100%;
+background:white;
+padding:18px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 3px 20px rgba(0,0,0,.08);
+z-index:1000;
+
+}
+
+nav a{
+
+text-decoration:none;
+color:var(--primary);
+font-weight:600;
+
+}
+
+.logo{
+
+font-family:'Playfair Display',serif;
+font-size:1.5rem;
+
+}
+
+.back{
+
+padding:10px 20px;
+background:var(--primary);
+color:white;
+border-radius:40px;
+
+}
+
+/* ===========================================
+HEADER
+=========================================== */
+
+header{
+
+padding:140px 30px 80px;
+text-align:center;
+background:linear-gradient(135deg,#edf5fb,#ffffff);
+
+}
+
+header h1{
+
+font-family:'Playfair Display',serif;
+font-size:3.5rem;
+color:var(--primary);
+margin-bottom:20px;
+
+}
+
+.subtitle{
+
+max-width:900px;
+margin:auto;
+font-size:1.15rem;
+color:#555;
+margin-bottom:45px;
+
+}
+
+.project-thumb img{
+
+width:100%;
+max-width:900px;
+border-radius:20px;
+box-shadow:0 18px 40px rgba(0,0,0,.15);
+
+}
+
+/* ===========================================
+GENERAL
+=========================================== */
+
+section{
+
+max-width:1100px;
+margin:auto;
+padding:80px 30px;
+
+}
+
+h2{
+
+font-family:'Playfair Display',serif;
+font-size:2.2rem;
+color:var(--primary);
+margin-bottom:35px;
+
+}
+
+h2::after{
+
+content:"";
+display:block;
+width:70px;
+height:4px;
+background:#00a896;
+margin-top:12px;
+border-radius:10px;
+
+}
+
+p{
+
+color:#444;
+line-height:1.8;
+
+}
+
+/* ===========================================
+SNAPSHOT
+=========================================== */
+
+.snapshot{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+
+}
+
+.snapshot-card{
+
+background:white;
+padding:28px;
+border-radius:18px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+transition:.3s ease;
+
+}
+
+.snapshot-card:hover{
+
+transform:translateY(-6px);
+box-shadow:0 16px 35px rgba(0,0,0,.12);
+
+}
+
+.snapshot-card h3{
+
+color:var(--accent);
+font-size:.9rem;
+text-transform:uppercase;
+margin-bottom:12px;
+
+}
+
+.snapshot-card p{
+
+font-weight:600;
+
+}
+
+/* ===========================================
+MOBILE
+=========================================== */
+
+@media(max-width:768px){
+
+header h1{
+
+font-size:2.5rem;
+
+}
+
+section{
+
+padding:60px 25px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+<a class="logo" href="index.html">LCB</a>
+
+<a class="back" href="index.html">← Back to Portfolio</a>
+
+</nav>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<h1>LEGO Aston Martin Valkyrie CAD Project</h1>
+
+<p class="subtitle">
+
+As part of EGR 120 – Introduction to Engineering, our four-person team reverse engineered a LEGO Aston Martin Valkyrie by measuring its components and recreating the vehicle in CATIA V5. I modeled the complete rear section of the car, including the rear spoiler assembly, integrated all team subassemblies into the final product, and produced the final rendered visualization at Daytona International Speedway.
+
+</p>
+
+<div class="project-thumb">
+
+<img src="Improved Render.jpg" alt="Rendered LEGO Aston Martin Valkyrie">
+
+</div>
+
+</header>
+
+<!-- ================= PROJECT SNAPSHOT ================= -->
+
+<section>
+
+<h2>Project Snapshot</h2>
+
+<div class="snapshot">
+
+<div class="snapshot-card">
+
+<h3>Role</h3>
+
+<p>Rear Assembly Design & Final CAD Integration</p>
+
+</div>
+
+<div class="snapshot-card">
+
+<h3>Software</h3>
+
+<p>CATIA V5</p>
+
+</div>
+
+<div class="snapshot-card">
+
+<h3>Course</h3>
+
+<p>EGR 120 – Introduction to Engineering</p>
+
+</div>
+
+<div class="snapshot-card">
+
+<h3>Outcome</h3>
+
+<p>Complete CAD Model & Photorealistic Rendering</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PROJECT OVERVIEW ================= -->
+
+<section class="overview">
+
+<h2>Project Overview</h2>
+
+<p>
+
+This project introduced the fundamentals of reverse engineering and computer-aided design through the recreation of a LEGO Aston Martin Valkyrie using CATIA V5. The vehicle was divided into four major sections, allowing each team member to independently measure and model their assigned components while maintaining the dimensions of the original LEGO model. I was responsible for designing the complete rear section of the vehicle, including the rear bodywork and spoiler assembly, before integrating every team member's subassembly into a complete CAD assembly. The project concluded with a rendered visualization of the finished model at Daytona International Speedway, combining engineering design with technical presentation.
+
+</p>
+
+</section>
+
+<!-- ================= ENGINEERING WORKFLOW ================= -->
+
+<section>
+
+<h2>Engineering Workflow</h2>
+
+<div class="workflow">
+
+<div class="workflow-step">
+
+🏎 Inspect and Measure the LEGO Model
+
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="workflow-step">
+
+📏 Divide Vehicle into Team Subassemblies
+
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="workflow-step">
+
+💻 Create Individual CAD Models in CATIA V5
+
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="workflow-step">
+
+🔩 Assemble Complete Vehicle
+
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="workflow-step">
+
+🎨 Render Final Design at Daytona International Speedway
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= ENGINEERING PROCESS ================= -->
+
+<section>
+
+<h2>Engineering Process</h2>
+
+<p style="margin-bottom:50px;">
+
+The project followed a structured engineering design workflow beginning with reverse engineering the physical LEGO model and ending with a fully assembled digital recreation. After dividing the vehicle into individual sections, each team member developed their assigned components in CATIA V5 before the complete vehicle was assembled and rendered. The key stages of the design process are highlighted below.
+
+</p>
+
+</section>
+
+<!-- ================= ENGINEERING HIGHLIGHTS ================= -->
+
+<section>
+
+<h2>Engineering Highlights</h2>
+
+<!-- ================= VEHICLE ANALYSIS ================= -->
+
+<div class="process-section">
+
+<h3>Reverse Engineering the Vehicle</h3>
+
+<img src="UNIMPROVED.png"
+     alt="Complete LEGO Aston Martin CAD Model"
+     class="process-image">
+
+<p>
+
+The project began by examining the physical LEGO Aston Martin Valkyrie and dividing it into four primary sections. Each team member was responsible for measuring and recreating a different portion of the vehicle in CATIA V5. This approach allowed the complete model to be developed simultaneously while maintaining the proportions and geometry of the original LEGO design.
+
+</p>
+
+</div>
+
+<!-- ================= REAR SUBASSEMBLY ================= -->
+
+<div class="process-section">
+
+<h3>Rear Section Design</h3>
+
+<img src="BACK_SUBASSY.jpg"
+     alt="Rear Subassembly"
+     class="process-image">
+
+<p>
+
+I was responsible for designing the complete rear section of the vehicle, including the rear chassis, body panels, wheel arches, and structural components. The subassembly was modeled by recreating the dimensions and connections of the original LEGO pieces while ensuring compatibility with the remaining vehicle assemblies.
+
+</p>
+
+</div>
+
+<!-- ================= REAR WING ================= -->
+
+<div class="process-section">
+
+<h3>Rear Spoiler Assembly</h3>
+
+<img src="rearWing_subassy.jpg"
+     alt="Rear Wing Assembly"
+     class="process-image">
+
+<p>
+
+The rear spoiler was modeled as a separate subassembly to simplify the design process and improve assembly organization. Particular attention was given to the mounting features and alignment so the spoiler could be integrated seamlessly into the completed rear assembly.
+
+</p>
+
+</div>
+
+<!-- ================= FINAL ASSEMBLY ================= -->
+
+<div class="process-section">
+
+<h3>Final Vehicle Assembly</h3>
+
+<img src="ISO UNIMPROVED.png"
+     alt="Final CATIA Assembly"
+     class="process-image">
+
+<p>
+
+Once every team member completed their assigned components, I assembled the individual subassemblies into a single CATIA product. This required verifying part alignment, correcting interfaces between assemblies, and ensuring that the completed digital model accurately represented the original LEGO vehicle.
+
+</p>
+
+</div>
+
+<!-- ================= ENGINEERING VIEWS ================= -->
+
+<div class="process-section">
+
+<h3>Assembly Verification</h3>
+
+<img src="TOP UNIMPROVED.png"
+     alt="Top View"
+     class="process-image">
+
+<img src="SIDE .png"
+     alt="Side View"
+     class="process-image">
+
+<img src="BACK UNIMPROVED.png"
+     alt="Rear View"
+     class="process-image">
+
+<p>
+
+Orthographic and isometric views were used throughout the project to verify the accuracy of the assembled vehicle. Inspecting the model from multiple perspectives helped confirm proper alignment, overall proportions, and successful integration of the independently designed subassemblies before producing the final rendering.
+
+</p>
+
+</div>
+
+<!-- ================= FINAL RENDER ================= -->
+
+<div class="process-section">
+
+<h3>Final Render</h3>
+
+<img src="Improved Render.jpg"
+     alt="Final Daytona Render"
+     class="process-image">
+
+<p>
+
+To complete the project, I created a rendered visualization of the assembled LEGO Aston Martin Valkyrie positioned at Daytona International Speedway. The render combined the finished CAD model with a recognizable local landmark, providing a professional presentation of the completed engineering design.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= CAD GALLERY ================= -->
+
+<section>
+
+<h2>Project Gallery</h2>
+
+<p style="max-width:850px; margin-bottom:40px;">
+
+The images below highlight key stages of the reverse engineering process, from individual subassemblies to the completed CAD assembly and final rendered model.
+
+</p>
+
+<div class="gallery">
+
+<div class="gallery-item">
+<img src="FRONT_SUBASSY.jpg" alt="Front Subassembly">
+<p>Front Subassembly</p>
+</div>
+
+<div class="gallery-item">
+<img src="wheel_subassy.jpg" alt="Wheel Assembly">
+<p>Wheel Assembly</p>
+</div>
+
+<div class="gallery-item">
+<img src="BACK_SUBASSY.jpg" alt="Rear Subassembly">
+<p>Rear Subassembly</p>
+</div>
+
+<div class="gallery-item">
+<img src="rearWing_subassy.jpg" alt="Rear Wing Assembly">
+<p>Rear Wing Assembly</p>
+</div>
+
+<div class="gallery-item">
+<img src="UNIMPROVED.png" alt="Complete CAD Model">
+<p>Initial Complete Assembly</p>
+</div>
+
+<div class="gallery-item">
+<img src="ISO UNIMPROVED.png" alt="Isometric View">
+<p>Isometric View</p>
+</div>
+
+<div class="gallery-item">
+<img src="TOP UNIMPROVED.png" alt="Top View">
+<p>Top View</p>
+</div>
+
+<div class="gallery-item">
+<img src="SIDE .png" alt="Side View">
+<p>Side View</p>
+</div>
+
+<div class="gallery-item">
+<img src="BACK UNIMPROVED.png" alt="Rear View">
+<p>Rear View</p>
+</div>
+
+<div class="gallery-item">
+<img src="Improved Render.jpg" alt="Final Render">
+<p>Final Render at Daytona International Speedway</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PROJECT FILES ================= -->
+
+<section>
+
+<h2>Project Files</h2>
+
+<p style="max-width:850px; margin-bottom:35px;">
+
+The complete project documentation summarizes the reverse engineering process, CAD development, final assembly, and rendering workflow used to recreate the LEGO Aston Martin Valkyrie. Additional design documentation and presentation materials are available below.
+
+</p>
+
+<div class="pdf-buttons">
+
+<a href="EGR120_Final_Report.pdf"
+target="_blank"
+class="deliverable-button">
+
+📄 Final Project Report
+
+</a>
+
+<a href="EGR120_Presentation.pdf"
+target="_blank"
+class="deliverable-button">
+
+🎤 Project Presentation
+
+</a>
+
+</div>
+
+</section>
+
+<!-- ================= TECHNICAL SKILLS ================= -->
+
+<section>
+
+<h2>Technical Skills</h2>
+
+<div class="skills">
+
+<span>CATIA V5</span>
+
+<span>Computer-Aided Design (CAD)</span>
+
+<span>Reverse Engineering</span>
+
+<span>3D Modeling</span>
+
+<span>Assembly Design</span>
+
+<span>Product Structure</span>
+
+<span>Engineering Visualization</span>
+
+<span>Technical Collaboration</span>
+
+</div>
+
+</section>
+
+<!-- ================= ENGINEERING TAKEAWAYS ================= -->
+
+<section>
+
+<h2>Engineering Takeaways</h2>
+
+<div class="takeaways">
+
+<div>
+
+<h3>✔ Reverse Engineering</h3>
+
+<p>
+
+Recreated a physical LEGO Aston Martin Valkyrie by measuring components and translating them into accurate three-dimensional CAD models using CATIA V5.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>✔ CAD Assembly Integration</h3>
+
+<p>
+
+Integrated independently developed subassemblies into a complete vehicle assembly while verifying alignment, interfaces, and overall model accuracy.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>✔ Engineering Communication</h3>
+
+<p>
+
+Produced professional renderings and technical documentation that effectively communicated the design process and final engineering solution.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+
+© 2026 Laura Cuesta Bret
+
+</p>
+
+</footer>
+
+<!-- ================= PAGE-SPECIFIC CSS ================= -->
+
+<style>
+
+/* ===========================================
+ENGINEERING PROCESS
+=========================================== */
+
+.process-section{
+
+padding:70px 0;
+border-bottom:1px solid #e8e8e8;
+
+}
+
+.process-section:last-child{
+
+border-bottom:none;
+
+}
+
+.process-section h3{
+
+font-family:'Playfair Display',serif;
+color:#0d3b66;
+font-size:1.8rem;
+margin-bottom:25px;
+
+}
+
+.process-section p{
+
+max-width:850px;
+margin:25px auto 0;
+line-height:1.8;
+color:#444;
+
+}
+
+/* ===========================================
+IMAGES
+=========================================== */
+
+.process-image{
+
+display:block;
+width:100%;
+max-width:850px;
+height:auto;
+margin:35px auto;
+border-radius:18px;
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+/* ===========================================
+WORKFLOW
+=========================================== */
+
+.workflow{
+
+background:white;
+padding:45px;
+border-radius:20px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.workflow-step{
+
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:1.1rem;
+font-weight:600;
+margin:20px 0;
+
+}
+
+.arrow{
+
+text-align:center;
+font-size:2rem;
+color:#00a896;
+margin:8px 0;
+
+}
+
+/* ===========================================
+BUTTONS
+=========================================== */
+
+.pdf-buttons{
+
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:35px;
+
+}
+
+.deliverable-button{
+
+display:inline-block;
+padding:14px 28px;
+background:#0d3b66;
+color:white;
+text-decoration:none;
+border-radius:40px;
+font-weight:600;
+transition:.3s ease;
+
+}
+
+.deliverable-button:hover{
+
+background:#00a896;
+transform:translateY(-3px);
+
+}
+
+/* ===========================================
+SKILLS
+=========================================== */
+
+.skills{
+
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+margin-top:35px;
+
+}
+
+.skills span{
+
+background:white;
+padding:12px 22px;
+border-radius:40px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+font-weight:600;
+
+}
+
+/* ===========================================
+TAKEAWAYS
+=========================================== */
+
+.takeaways{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+
+}
+
+.takeaways div{
+
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.takeaways h3{
+
+color:#0d3b66;
+margin-bottom:15px;
+
+}
+
+/* ===========================================
+PROJECT GALLERY
+=========================================== */
+
+.gallery{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:28px;
+
+}
+
+.gallery-item{
+
+background:white;
+padding:18px;
+border-radius:18px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+transition:.3s ease;
+
+}
+
+.gallery-item:hover{
+
+transform:translateY(-6px);
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+.gallery-item img{
+
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:12px;
+margin-bottom:15px;
+
+}
+
+.gallery-item p{
+
+text-align:center;
+font-weight:600;
+color:#0d3b66;
+
+}
+
+/* ===========================================
+FOOTER
+=========================================== */
+
+footer{
+
+background:#0d3b66;
+color:white;
+text-align:center;
+padding:40px 20px;
+margin-top:80px;
+
+}
+
+footer p{
+
+color:white;
+
+}
+
+/* ===========================================
+MOBILE
+=========================================== */
+
+@media(max-width:768px){
+
+.process-section{
+
+padding:50px 0;
+
+}
+
+.process-section h3{
+
+font-size:1.5rem;
+
+}
+
+.workflow{
+
+padding:30px 20px;
+
+}
+
+.gallery{
+
+grid-template-columns:1fr;
+
+}
+
+.gallery-item img{
+
+height:auto;
+
+}
+
+}
+
+</style>
+
+</body>
+
+</html>
